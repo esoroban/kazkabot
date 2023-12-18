@@ -29,8 +29,9 @@ export class Loader {
           );
         } catch (error) {
           console.error(`Error editing message: ${error}. Chat ID: ${this.ctx.chat.id}, User Name: ${this.ctx.from.first_name}, Username: ${this.ctx.from.username}`);
+          clearInterval(this.interval);
         }
-      }, 1250);
+      }, 1500);
     } catch (error) {
       console.error(`Error sending message: ${error}. Chat ID: ${this.ctx.chat.id}, User Name: ${this.ctx.from.first_name}, Username: ${this.ctx.from.username}`);
     }
